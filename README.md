@@ -1,0 +1,5 @@
+- React, 
+- React Query, 
+- React Router, 
+- Chakra UI
+- Zustand
