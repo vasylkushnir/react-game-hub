@@ -4,12 +4,6 @@ import usePlatforms from "../hooks/usePlatforms"
 import usePlatform from "../hooks/usePlatform"
 import useGameQueryStore from "../store"
 
-export interface Genre {
-  id: number
-  name: string
-  image_background: string
-}
-
 const PlatformSelector = () => {
   const { data, error } = usePlatforms()
 
@@ -17,7 +11,7 @@ const PlatformSelector = () => {
   const selectedPlatformId = useGameQueryStore(s => s.gameQuery.platformId)
   const selectedPlatform = usePlatform(selectedPlatformId)
 
-  if(error) return null
+  if(error) throw error
 
   return (
     <Menu>

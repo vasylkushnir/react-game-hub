@@ -8,9 +8,9 @@ interface Props {
 const GameScreenshot = ({ gameId }: Props) => {
   const { data, isLoading, error } = useScreenshots(gameId)
 
-  if(isLoading) return <Spinner/>
-
   if(error) throw error
+
+  if(isLoading) return <Spinner/>
 
   return (
     <SimpleGrid columns={ { base: 1, md: 2} } spacing={2}>

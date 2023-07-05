@@ -9,9 +9,9 @@ const GameTrailer = ({ gameId }: Props) => {
 
   const { data, error, isLoading} = useTrailers(gameId)
 
-  if(isLoading) return <Spinner/>
-
   if(error) throw error
+
+  if(isLoading) return <Spinner/>
 
   const first = data?.results[0]
 
